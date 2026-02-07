@@ -93,9 +93,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("Total calls: {}", args.number);
     println!("Total time: {:?}", elapsed_time);
+    let avg_time = if args.number == 0 { Default::default() } else { std::time::Duration::from_nanos((elapsed_time.as_nanos() / args.number as u128) as u64) };
     println!(
         "Average time per call: {:?}",
-        elapsed_time / args.number as u32
+        avg_time
     );
 
     Ok(())
