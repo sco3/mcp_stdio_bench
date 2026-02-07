@@ -44,17 +44,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = Args::parse();
 
     tracing_subscriber::registry()
-        .with(
-            tracing_subscriber::EnvFilter::try_from_default_env()
-                .unwrap_or_else(|_| {
-                    args.log_level
-                        .as_deref()
-                        .unwrap_or("info")
-                        .into()
-                }),
+    .with(
+        tracing_subscriber::EnvFilter::try_from_default_env()
+        .unwrap_or_else(|_| {
+            args.log_level
+            .as_deref()
+            .unwrap_or("info")
+            .into()
+        }),
         )
-        .with(tracing_subscriber::fmt::layer())
-        .init();
+    .with(tracing_subscriber::fmt::layer())
+    .init();
 
     let parsed_params: Option<serde_json::Map<String, Value>> = if let Some(params_str) = &args.params {
         let value: Value = serde_json::from_str(params_str)?;
@@ -69,23 +69,25 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let client = ().serve(TokioChildProcess::new(Command::new(&args.server).configure(|cmd| {
         cmd.stdin(std::process::Stdio::piped())
-           .stdout(std::process::Stdio::piped());
+        .stdout(std::process::Stdio::piped());
     }))?).await?;
+
+    let tool_call_params = CallToolRequestParams {
+        meta: None,
+        name: args.method.clone().into(),
+        arguments: if let Some(p) = &parsed_params {
+            Some(p.clone())
+        } else {
+            Some(object!({ "name": "world" }))
+        },
+        task: None,
+    };
+
 
     let start_time = Instant::now();
 
     for _i in 0..args.number {
         // Send the method call as a tool call
-        let tool_call_params = CallToolRequestParams {
-            meta: None,
-            name: args.method.clone().into(),
-            arguments: if let Some(p) = &parsed_params {
-                Some(p.clone())
-            } else {
-                Some(object!({ "name": "world" }))
-            },
-            task: None,
-        };
         let _response = client.call_tool(tool_call_params).await?;
     }
 
@@ -97,7 +99,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!(
         "Average time per call: {:?}",
         avg_time
-    );
+        );
 
     Ok(())
 }
