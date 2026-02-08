@@ -2,17 +2,13 @@ use clap::Parser;
 use rmcp::{
     model::CallToolRequestParams,
     object,
-    transport::{ConfigureCommandExt, TokioChildProcess},
+    transport::TokioChildProcess,
     ServiceExt,
 };
 use serde_json::Value;
-use std::fs::File;
 use std::time::Instant;
 use tokio::process::Command;
-use tracing_appender::non_blocking::{NonBlocking, WorkerGuard};
-use tracing_subscriber::{
-    filter::LevelFilter, layer::SubscriberExt, util::SubscriberInitExt, Layer,
-}; // Added LevelFilter
+use tracing_appender::non_blocking::WorkerGuard;
 
 /// A benchmark tool for calling a method on an rmcp server over stdio.
 #[derive(Parser, Debug)]
@@ -75,16 +71,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             None
         };
 
-    let client = ()
-        .serve(TokioChildProcess::new(
-            Command::new(&args.server).configure(|cmd| {
-                cmd.stdin(std::process::Stdio::piped())
-                    .stdout(std::process::Stdio::piped())
-                    .stderr(std::process::Stdio::null())
-                    .env("RUST_LOG", args.log_level.clone());
-            }),
-        )?)
-        .await?;
+    let mut cmd = Command::new(&args.server);
+    cmd.stdin(std::process::Stdio::piped())
+        .stdout(std::process::Stdio::piped())
+        .stderr(std::process::Stdio::inherit())
+        .env("RUST_LOG", args.log_level.clone());
+
+    let client = ().serve(TokioChildProcess::new(cmd)?).await?;
 
     let tool_call_params = CallToolRequestParams {
         meta: None,
@@ -114,6 +107,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         std::time::Duration::from_nanos((elapsed_time.as_nanos() / args.number as u128) as u64)
     };
     println!("Average time per call: {:?}", avg_time);
+    
+    let rps = if elapsed_time.as_secs_f64() > 0.0 {
+        args.number as f64 / elapsed_time.as_secs_f64()
+    } else {
+        0.0
+    };
+    println!("RPS (Requests Per Second): {:.2}", rps);
 
     Ok(())
 }
