@@ -6,13 +6,10 @@ use rmcp::{
     ServiceExt,
 };
 use serde_json::Value;
-use std::fs::File;
 use std::time::Instant;
 use tokio::process::Command;
-use tracing_appender::non_blocking::{NonBlocking, WorkerGuard};
-use tracing_subscriber::{
-    filter::LevelFilter, layer::SubscriberExt, util::SubscriberInitExt, Layer,
-}; // Added LevelFilter
+use tracing_appender::non_blocking::WorkerGuard;
+use tracing_subscriber::util::SubscriberInitExt;
 
 /// A benchmark tool for calling a method on an rmcp server over stdio.
 #[derive(Parser, Debug)]
