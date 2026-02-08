@@ -25,7 +25,7 @@ This tool benchmarks the performance of calling methods on an RMCP server over s
 To run a benchmark of 100 calls to the `say_hello` method on the `mcservers_counter_stdio` server (assuming it's located at `/home/dz/bin/mcservers_counter_stdio`):
 
 ```bash
-cargo run --release -- --server /home/dz/bin/mcservers_counter_stdio --number 100 --method say_hello
+cargo run --release -- --server mcservers_counter_stdio --number 100 --method say_hello
 ```
 
 The output will include the total number of calls, the total time taken, and the average time per call.
