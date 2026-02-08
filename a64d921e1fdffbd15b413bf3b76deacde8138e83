@@ -1,0 +1,17 @@
+{"id":"78efe2af-e298-45db-9ce7-dfe17f5b7374","ts":"2026-02-08T06:12:40.484Z","path":"/home/dz/prj/mcp_stdio_bench/main.go","version":"1.0.0","taskID":"4cf20c27-cac1-450d-a5d1-7b27fe738c46"}
+{"id":"2062addb-91f9-4d93-98e0-73f1233b2a2d","ts":"2026-02-08T06:13:43.523Z","path":"/home/dz/prj/mcp_stdio_bench/main.go","version":"1.0.0","taskID":"4cf20c27-cac1-450d-a5d1-7b27fe738c46"}
+{"id":"9d333c76-cd7e-4373-a033-fca508b3f8cc","ts":"2026-02-08T06:14:24.823Z","path":"/home/dz/prj/mcp_stdio_bench/main.go","version":"1.0.0","taskID":"4cf20c27-cac1-450d-a5d1-7b27fe738c46"}
+{"id":"daa1a10e-dff6-459c-9922-89911b9ee881","ts":"2026-02-08T06:15:36.781Z","path":"/home/dz/prj/mcp_stdio_bench/test_go.sh","version":"1.0.0","taskID":"4cf20c27-cac1-450d-a5d1-7b27fe738c46"}
+{"id":"d051a401-c68f-4da2-b75f-d64ff325133d","ts":"2026-02-08T16:47:39.295Z","path":"/home/dz/prj/mcp_stdio_bench/src/main.rs","version":"1.0.0","taskID":"ddb844a5-5750-4160-9af1-571267581d9d"}
+{"id":"d9674a1d-0cca-47a2-9145-8030401ff7e9","ts":"2026-02-08T17:16:35.140Z","path":"/home/dz/prj/mcp_stdio_bench/main.go","version":"1.0.0","taskID":"954d0099-0afb-4712-92dd-0dc15e5f9893"}
+{"id":"c84f9a98-255b-455f-bccf-30dd1483400a","ts":"2026-02-08T17:27:41.343Z","path":"/home/dz/prj/mcp_stdio_bench/main.go","version":"1.0.0","taskID":"510eb246-6bab-4fd9-9066-5cf361a8673b"}
+{"id":"d5bb32e1-1cfc-401b-8c88-7f418932ef4f","ts":"2026-02-08T17:31:20.746Z","path":"/home/dz/prj/mcp_stdio_bench/src/main.rs","version":"1.0.0","taskID":"42712f37-01b9-4358-9bea-0ab6631da49c"}
+{"id":"2ec294a7-9bce-4dd1-8a4f-cce057269746","ts":"2026-02-08T17:32:42.081Z","path":"/home/dz/prj/mcp_stdio_bench/src/main.rs","version":"1.0.0","taskID":"42712f37-01b9-4358-9bea-0ab6631da49c"}
+{"id":"37895766-63c5-4c44-914f-688b775a43d9","ts":"2026-02-08T17:33:04.692Z","path":"/home/dz/prj/mcp_stdio_bench/src/main.rs","version":"1.0.0","taskID":"42712f37-01b9-4358-9bea-0ab6631da49c"}
+{"id":"2ce908d9-b039-46a2-bb74-833e30ddb90f","ts":"2026-02-08T17:36:16.637Z","path":"/home/dz/prj/mcp_stdio_bench/src/main.rs","version":"1.0.0","taskID":"a1f44de9-5e30-49ab-9a79-6336b17037b9"}
+{"id":"74a17988-befc-4f14-9d2f-f7dbd0689319","ts":"2026-02-08T17:36:33.776Z","path":"/home/dz/prj/mcp_stdio_bench/src/main.rs","version":"1.0.0","taskID":"a1f44de9-5e30-49ab-9a79-6336b17037b9"}
+{"id":"b0bd5a23-cdb4-4edd-bd31-7af375930c8b","ts":"2026-02-08T17:36:41.175Z","path":"/home/dz/prj/mcp_stdio_bench/src/main.rs","version":"1.0.0","taskID":"a1f44de9-5e30-49ab-9a79-6336b17037b9"}
+{"id":"a2e52a7c-c9a5-41a7-b9ec-3d37f28ad979","ts":"2026-02-08T17:37:47.998Z","path":"/home/dz/prj/mcp_stdio_bench/src/main.rs","version":"1.0.0","taskID":"a1f44de9-5e30-49ab-9a79-6336b17037b9"}
+{"id":"e7727a34-7a5f-4e9a-95ee-3528cc38ecce","ts":"2026-02-08T17:38:06.735Z","path":"/home/dz/prj/mcp_stdio_bench/src/main.rs","version":"1.0.0","taskID":"a1f44de9-5e30-49ab-9a79-6336b17037b9"}
+{"id":"6a9abc8c-eda1-4516-bfbd-fa1e09856cc5","ts":"2026-02-08T17:38:28.610Z","path":"/home/dz/prj/mcp_stdio_bench/src/main.rs","version":"1.0.0","taskID":"a1f44de9-5e30-49ab-9a79-6336b17037b9"}
+{"id":"6157e03d-14c1-4e27-bd95-d8ee8f59212d","ts":"2026-02-08T17:38:49.485Z","path":"/home/dz/prj/mcp_stdio_bench/src/main.rs","version":"1.0.0","taskID":"a1f44de9-5e30-49ab-9a79-6336b17037b9"}
